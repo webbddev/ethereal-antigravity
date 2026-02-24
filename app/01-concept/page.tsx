@@ -17,7 +17,7 @@ const galleryImages = [
 
 export default function ConceptPage() {
   return (
-    <main className='relative bg-white dark:bg-black text-black dark:text-white'>
+    <main className='relative bg-white dark:bg-black text-black dark:text-white h-screen'>
       <section className='py-40'>
         <div className='container mx-auto px-6'>
           <h1 className='text-6xl md:text-8xl font-display uppercase tracking-[-0.05em] leading-[0.85] mb-8'>

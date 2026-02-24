@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <ScrollSection />
       <ContentSection />
-      <Footer />
+      <Footer /> 
     </main>
   );
 }

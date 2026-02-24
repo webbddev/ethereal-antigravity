@@ -88,13 +88,13 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1 }}
-        className='absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4'
+        transition={{ delay: 2, duration: 1 }}
+        className='absolute bottom-1 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-30'
       >
-        <span className='font-mono text-[9px] uppercase tracking-[0.5em] text-zinc-600 dark:text-zinc-400 transition-colors duration-300'>
+        <span className='font-mono text-[8px] uppercase tracking-[0.5em] text-zinc-500 dark:text-zinc-400'>
           Scroll to Enter
         </span>
-        <div className='w-px h-16 bg-gradient-to-b from-emerald-500 to-transparent' />
+        <div className='w-px h-12 bg-gradient-to-b from-emerald-500/50 to-transparent' />
       </motion.div>
     </section>
   );

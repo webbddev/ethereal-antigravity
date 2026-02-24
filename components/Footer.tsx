@@ -12,7 +12,7 @@ const Footer = () => {
           <a href='#' className='hover:text-white transition-colors'>
             Instagram
           </a>
-          <a href='#' className='hover:text-white transition-colors'>
+          <a href='/05-contact' className='hover:text-white transition-colors'>
             Contact
           </a>
         </div>
