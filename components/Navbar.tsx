@@ -4,7 +4,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence, easeOut, easeIn, cubicBezier } from 'framer-motion';
+import {
+  motion,
+  AnimatePresence,
+  easeOut,
+  easeIn,
+  cubicBezier,
+} from 'framer-motion';
 import clsx from 'clsx';
 import ThemeToggle from './ThemeToggle';
 
@@ -21,18 +27,14 @@ export default function Navbar() {
     { name: '05 Contact', href: '/05-contact' },
   ];
 
-  // Variants for the full-screen mobile overlay
   const menuVariants = {
-    hidden: {
-      opacity: 0,
-      x: '100%',
-    },
+    hidden: { opacity: 0, x: '100%' },
     visible: {
       opacity: 1,
       x: '0%',
       transition: {
         duration: 0.4,
-        ease: cubicBezier(0.22, 1, 0.36, 1), // Custom cubic-bezier for a more cinematic feel
+        ease: cubicBezier(0.22, 1, 0.36, 1),
       },
     },
     exit: {
@@ -41,12 +43,11 @@ export default function Navbar() {
       transition: {
         duration: 0.3,
         ease: easeIn,
-        when: 'afterChildren', // Ensures links vanish before the menu slides away
+        when: 'afterChildren',
       },
     },
   };
 
-  // Variants for the individual links (Stagger Effect)
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -66,7 +67,8 @@ export default function Navbar() {
       <div className='container mx-auto px-6 flex justify-between items-center'>
         <Link
           href='/'
-          className='font-display text-2xl uppercase tracking-tighter text-white/75'
+          // UPDATED: Theme-aware logo color with 1s transition
+          className='font-display text-2xl uppercase tracking-tighter text-black/75 dark:text-white/75 transition-colors duration-1000'
         >
           Ethereal
         </Link>
@@ -79,9 +81,8 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={clsx(
-                    // transition-all and duration-1000 applied to base for 1s scale-up AND scale-down
                     'inline-block text-zinc-500 text-sm uppercase tracking-widest transition-all duration-1000 ease-in-out',
-                    'hover:text-black/75 hover:scale-105 dark:hover:text-white/75',
+                    'hover:text-black dark:hover:text-white hover:scale-105',
                     {
                       'text-black dark:text-white': pathname === item.href,
                     },
@@ -98,7 +99,11 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <div className='md:hidden flex items-center gap-4'>
           <ThemeToggle />
-          <button onClick={() => setIsOpen(!isOpen)} className='text-zinc-300 z-50 relative'>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            // UPDATED: Theme-aware icon color
+            className='text-black dark:text-white transition-colors duration-1000 z-50 relative'
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -119,14 +124,14 @@ export default function Navbar() {
               variants={{
                 visible: {
                   transition: {
-                    staggerChildren: 0.1, // Stagger entrance
+                    staggerChildren: 0.1,
                     delayChildren: 0.2,
                   },
                 },
                 exit: {
                   transition: {
                     staggerChildren: 0.05,
-                    staggerDirection: -1, // Fly out from bottom to top
+                    staggerDirection: -1,
                   },
                 },
               }}
@@ -135,7 +140,6 @@ export default function Navbar() {
                 <motion.li key={item.name} variants={itemVariants}>
                   <Link
                     href={item.href}
-                    // Closes menu and slides it away upon selection
                     onClick={() => setIsOpen(false)}
                     className={clsx(
                       'relative inline-block text-zinc-500 text-2xl uppercase tracking-widest transition-all duration-1000 ease-in-out',

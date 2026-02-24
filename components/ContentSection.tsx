@@ -50,14 +50,14 @@ const editorialItems = [
 
 export default function ContentSection() {
   return (
-    <section className='relative bg-white dark:bg-black text-black dark:text-white overflow-hidden border-t border-black dark:border-white'>
+    <section className='relative bg-white dark:bg-black/95 text-black dark:text-white overflow-hidden border-t border-black dark:border-white'>
       {/* Editorial Grid Header */}
       <div className='grid grid-cols-1 md:grid-cols-4 border-b border-black dark:border-white'>
         {editorialItems.map((item, index) => (
           <Link
             href={item.href}
             key={item.title}
-            className={`p-8 flex flex-col justify-between h-64 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors ${
+            className={`p-8 flex flex-col justify-between h-64 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors ${
               index < 3 ? 'border-b md:border-b-0 md:border-r' : ''
             } border-black dark:border-white`}
           >

@@ -15,6 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/components/theme-provider';
+import SmoothScroll from '@/components/SmoothScroll';
 
 export const metadata: Metadata = {
   title: 'Immersive Scroll Experience',
@@ -34,7 +35,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className='bg-white  dark:bg-[#050505] dark:text-white antialiased'
+        className='bg-white   dark:text-white antialiased'
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -43,8 +44,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <Navbar />
-          <PageTransition>{children}</PageTransition>
+          <SmoothScroll>
+            <Navbar />
+            <PageTransition>{children}</PageTransition>
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>

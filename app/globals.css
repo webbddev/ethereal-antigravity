@@ -7,21 +7,28 @@
   --font-display: var(--font-display);
 }
 
+/* Define theme-aware variables */
+:root {
+  --hero-stroke: rgba(0, 0, 0, 0.2); /* Black stroke for light mode */
+}
+
+.dark {
+  --hero-stroke: rgba(255, 255, 255, 0.2); /* White stroke for dark mode */
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
+  /* Syncing body transition with the rest of the app */
+  transition: background-color 1s ease, color 1s ease;
 }
 
-body {
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-/* If you want all elements to transition (can be heavy, but looks consistent) */
 * {
-  transition-property: background-color, border-color, color, fill, stroke;
-  /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
-  transition-duration: 500ms;
+  /* Added 'v-text-stroke' to the transition list for the 'Void' effect */
+  transition-property: background-color, border-color, color, fill, stroke, -webkit-text-stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1000ms;
 }
