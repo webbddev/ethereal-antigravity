@@ -6,12 +6,12 @@ export default function Hero() {
   return (
     <section className='relative h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050505] pt-20'>
       {/* Top Navigation / Meta Info */}
-      <div className='absolute top-0 w-full p-8 flex justify-between items-start z-20 hidden md:flex'>
+      <div className='absolute top-0 w-full p-8 justify-between items-start z-20 hidden md:flex'>
         <div className='flex flex-col'>
           <span className='font-mono text-[10px] uppercase tracking-[0.4em] text-emerald-500 mb-1'>
             Project
           </span>
-          <span className='font-display text-lg uppercase tracking-tighter'>
+          <span className='text-white font-display text-lg uppercase tracking-tighter'>
             Ethereal v.01
           </span>
         </div>
@@ -19,7 +19,7 @@ export default function Hero() {
           <span className='font-mono text-[10px] uppercase tracking-[0.4em] text-zinc-500 mb-1'>
             Location
           </span>
-          <span className='font-display text-lg uppercase tracking-tighter'>
+          <span className='text-white font-display text-lg uppercase tracking-tighter'>
             Digital Void
           </span>
         </div>
@@ -36,7 +36,7 @@ export default function Hero() {
                 ease: [0.16, 1, 0.3, 1],
                 delay: 0.1,
               }}
-              className='block font-display text-[22vw] leading-[0.75] uppercase tracking-[-0.05em]'
+              className='text-white block font-display text-[22vw] leading-[0.75] uppercase tracking-[-0.05em]'
             >
               Pure
             </motion.span>

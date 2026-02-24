@@ -34,14 +34,14 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className='bg-white text-black dark:bg-[#050505] dark:text-white antialiased'
+        className='bg-white  dark:bg-[#050505] dark:text-white antialiased'
         suppressHydrationWarning
       >
         <ThemeProvider
           attribute='class'
           defaultTheme='dark'
           enableSystem
-          disableTransitionOnChange
+          disableTransitionOnChange={false}
         >
           <Navbar />
           <PageTransition>{children}</PageTransition>

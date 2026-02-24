@@ -18,7 +18,7 @@ export default function Navbar() {
     { name: '02 Design', href: '/02-design' },
     { name: '03 The Stack', href: '/03-the-stack' },
     { name: '04 The Impact', href: '/04-the-impact' },
-    { name: 'Contact', href: '/contact' },
+    { name: '05 Contact', href: '/05-contact' },
   ];
 
   const menuVariants = {
@@ -45,7 +45,7 @@ export default function Navbar() {
       <div className='container mx-auto px-6 flex justify-between items-center'>
         <Link
           href='/'
-          className='font-display text-2xl uppercase tracking-tighter text-black/75 dark:text-white/75'
+          className='font-display text-2xl uppercase tracking-tighter text-white/75 '
         >
           Ethereal
         </Link>
@@ -58,8 +58,8 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={clsx(
-                    'inline-block text-zinc-500 text-sm uppercase tracking-widest transition-all duration-200',
-                    'hover:text-black/75 hover:scale-105 dark:hover:text-white/75',
+                    'inline-block text-zinc-500 text-sm uppercase tracking-widest transition-all duration-1000',
+                    'hover:text-white/75 hover:scale-105 dark:hover:text-white/75',
                     {
                       'text-black dark:text-white': pathname === item.href,
                     },

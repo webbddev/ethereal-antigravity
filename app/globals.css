@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @variant dark (&:where(.dark, .dark *));
 
@@ -13,4 +13,15 @@ html {
 
 body {
   overflow-x: hidden;
+}
+
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* If you want all elements to transition (can be heavy, but looks consistent) */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+  transition-duration: 500ms;
 }

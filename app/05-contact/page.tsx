@@ -373,7 +373,7 @@ export default function ContactPage() {
               Instagram
             </a>
             <Link
-              href='/contact'
+              href='/05-contact/'
               className='hover:text-black dark:hover:text-white transition-colors'
             >
               Contact
